@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Unit Testing project</Description>
+    <Copyright>Copyright (c) 2016-2017 - Unosquare</Copyright>
+    <AssemblyTitle>Unosquare SWAN Test</AssemblyTitle>
+    <TargetFrameworks>netcoreapp1.1;net452</TargetFrameworks>
+    <AssemblyName>Unosquare.Swan.Test</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Unosquare.Swan.Test</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <RuntimeIdentifiers>win8-x64;ubuntu.14.04-x64;osx.10.11-x64</RuntimeIdentifiers>
+    <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">1.1.1</RuntimeFrameworkVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Unosquare.Swan\Unosquare.Swan.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
+    <PackageReference Include="dotnet-test-nunit" Version="3.4.0-beta-3" />
+    <PackageReference Include="NUnit" Version="3.6.1" />
+    <PackageReference Include="EmbedIO" Version="1.6.5" />
+    <PackageReference Include="MimeKit" Version="1.14.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
