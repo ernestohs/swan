@@ -5,7 +5,7 @@
     <Copyright>Copyright (c) 2016-2017 - Unosquare</Copyright>
     <AssemblyTitle>Unosquare SWAN</AssemblyTitle>
     <VersionPrefix>0.14.2</VersionPrefix>
-    <TargetFrameworks>uap10.0;netstandard1.6;netstandard1.3;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;netstandard1.3;net452</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Unosquare.Swan</AssemblyName>
     <PackageId>Unosquare.Swan</PackageId>
