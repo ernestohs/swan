@@ -15,12 +15,12 @@ namespace Unosquare.Swan.Test
             Assert.IsTrue(assemblies.Any());
             // NET452 sometimes is loading 17 or 20
             Assert.GreaterOrEqual(
+                assemblies.Length,
 #if NET452
                 17,
 #else
                 4,
 #endif
-                assemblies.Length,
                 "Check assemblies are loaded fine");
         }
 

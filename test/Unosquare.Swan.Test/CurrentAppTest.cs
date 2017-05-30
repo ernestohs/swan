@@ -27,6 +27,7 @@ namespace Unosquare.Swan.Test
         [Test]
         public void GetAssemblyAttributesTest()
         {
+            if (Runtime.Process.ProcessName.StartsWith("JetBrains.ReSharper")) Assert.Ignore("Ignore Resharper runner");
             Assert.AreEqual("NUnit Software", Runtime.CompanyName);
             Assert.AreEqual("dotnet_test_nunit", Runtime.ProductName);
             Assert.AreEqual("NUnit is a trademark of NUnit Software", Runtime.ProductTrademark);
@@ -41,6 +42,7 @@ namespace Unosquare.Swan.Test
         [Test]
         public void GetProcessTest()
         {
+            if (Runtime.Process.ProcessName.StartsWith("JetBrains.ReSharper")) Assert.Ignore("Ignore Resharper runner");
             Assert.IsNotNull(Runtime.Process);
             Assert.AreEqual(Runtime.Process.ProcessName,
 #if NET452
@@ -54,8 +56,10 @@ namespace Unosquare.Swan.Test
         [Test]
         public void GetEntryAssemblyTest()
         {
-            Assert.IsNotNull(Runtime.EntryAssembly);
-            Assert.IsTrue(Runtime.EntryAssembly.FullName.StartsWith("dotnet-test-nunit"));
+            if (Runtime.Process.ProcessName.StartsWith("JetBrains.ReSharper")) Assert.Ignore("Ignore Resharper runner");
+            var entryAssembly = Runtime.EntryAssembly;
+            Assert.IsNotNull(entryAssembly);
+            Assert.IsTrue(entryAssembly.FullName.StartsWith("dotnet-test-nunit"));
         }
 
         [Test]

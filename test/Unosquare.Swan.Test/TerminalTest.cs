@@ -84,6 +84,7 @@ namespace Unosquare.Swan.Test
         [Test]
         public void Encoding()
         {
+            if (Runtime.Process.ProcessName.StartsWith("JetBrains.ReSharper")) Assert.Ignore("Ignore Resharper runner");
             var defaultEncoding = Terminal.OutputEncoding;
             Assert.IsNotNull(defaultEncoding);
             Terminal.OutputEncoding = System.Text.Encoding.UTF8;

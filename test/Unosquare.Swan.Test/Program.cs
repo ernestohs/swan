@@ -13,16 +13,16 @@ using Unosquare.Swan.Test.Mocks;
 
 namespace Unosquare.Swan.Test
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (var instance = MockProvider.Instance)
-            {
-                instance.GetName().Info();
-            }
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        using (var instance = MockProvider.Instance)
+    //        {
+    //            instance.GetName().Info();
+    //        }
 
-            Console.ReadLine();
-        }
-    }
+    //        Console.ReadLine();
+    //    }
+    //}
 }
